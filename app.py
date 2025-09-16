@@ -123,11 +123,11 @@ if 'current_inputs' not in st.session_state:
 def load_model():
     """Load the trained model with error handling"""
     try:
-        with open("best_possum_rf_nocase.pkl", "rb") as f:
+        with open("possum_pickel.pkl", "rb") as f:
             model = pickle.load(f)
         return model, None
     except FileNotFoundError:
-        return None, "Model file 'best_possum_rf_nocase.pkl' not found. Please ensure the model file is in the same directory."
+        return None, "Model file 'possum_pickel.pkl' not found. Please ensure the model file is in the same directory."
     except Exception as e:
         return None, f"Error loading model: {str(e)}"
 
